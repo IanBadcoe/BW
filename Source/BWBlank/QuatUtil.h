@@ -48,8 +48,8 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Add Actor Local Rotation (Quaternion)", Keywords = "rotation, quaternion"), Category = "Quaternion Rotation")
 		static void AddActorLocalRotationQuat(AActor* Actor, const FQuat& Delta_Rotation);
 
+	// Function to add delta rotation to current world rotation of Actor
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Add Actor World Rotation (Quaternion)", Keywords = "rotation, quaternion"), Category = "Quaternion Rotation")
+		static void AddActorWorldRotationQuat(AActor* Actor, const FQuat& Delta_Rotation);
 
-
-	
-	
 };

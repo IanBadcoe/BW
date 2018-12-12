@@ -2,6 +2,7 @@
 
 #include "QuatUtil.h"
 
+#pragma optimize("", off)
 
 // Formula to convert a Euler angle in degrees to a quaternion rotation
 FQuat UQuatUtil::Euler_To_Quaternion(FRotator Current_Rotation)
@@ -92,11 +93,12 @@ void UQuatUtil::AddActorLocalRotationQuat(AActor* Actor, const FQuat& Delta_Rota
 	}
 }
 
-//void UQuatUtil::AddControllerLocalRotationQuat(APlayerController * Controller, const FQuat & Delta_Rotation)
-//{
-//	if (Controller)
-//	{
-//		Controller->AddInput(Delta_Rotation);
-//	}
-//}
+void UQuatUtil::AddActorWorldRotationQuat(AActor * Actor, const FQuat & Delta_Rotation)
+{
+	if (Actor)
+	{
+		Actor->AddActorWorldRotation(Delta_Rotation);
+	}
+}
 
+#pragma optimize("", on)
