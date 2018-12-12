@@ -20,6 +20,10 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Euler To Quaternion", Keywords = "rotation, quaterion"), Category = "Quaternion Rotation")
 		static FQuat Euler_To_Quaternion(FRotator Current_Rotation);
 
+	// Convert Axis and Angle To Quaternion
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Axis And Angle To Quaternion", Keywords = "rotation, quaterion"), Category = "Quaternion Rotation")
+		static FQuat Axis_Angle_To_Quaternion(FVector Axis, float Angle);
+
 	// Function to set world rotation of scene component to input quaternion rotation
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Set World Rotation (Quaterion)", Keywords = "rotation, quaternion"), Category = "Quaternion Rotation")
 		static void SetWorldRotationQuat(USceneComponent* SceneComponent, const FQuat& Desired_Rotation);
@@ -44,9 +48,6 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Add Actor Local Rotation (Quaternion)", Keywords = "rotation, quaternion"), Category = "Quaternion Rotation")
 		static void AddActorLocalRotationQuat(AActor* Actor, const FQuat& Delta_Rotation);
 
-	//// Function to add delta rotation to current local rotation of Actor
-	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "Add Controller Local Rotation (Quaternion)", Keywords = "rotation, quaternion"), Category = "Quaternion Rotation")
-	//	static void AddControllerLocalRotationQuat(APlayerController *Controller, const FQuat& Delta_Rotation);
 
 
 	

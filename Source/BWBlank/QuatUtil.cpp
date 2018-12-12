@@ -26,6 +26,18 @@ FQuat UQuatUtil::Euler_To_Quaternion(FRotator Current_Rotation)
 	return q;                                           // Return the quaternion of the input Euler rotation
 }
 
+FQuat UQuatUtil::Axis_Angle_To_Quaternion(FVector Axis, float Angle)
+{
+	FQuat q;
+
+	q.X = Axis.X * sin(Angle / 2);
+	q.Y = Axis.Y * sin(Angle / 2);
+	q.Z = Axis.Z * sin(Angle / 2);
+	q.W = cos(Angle / 2);
+
+	return q;
+}
+
 // Set the scene component's world rotation to the input quaternion
 void UQuatUtil::SetWorldRotationQuat(USceneComponent* SceneComponent, const FQuat& Desired_Rotation)
 {
