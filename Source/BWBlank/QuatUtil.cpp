@@ -2,7 +2,7 @@
 
 #include "QuatUtil.h"
 
-#pragma optimize("", off)
+PRAGMA_DISABLE_OPTIMIZATION
 
 // Formula to convert a Euler angle in degrees to a quaternion rotation
 FQuat UQuatUtil::Euler_To_Quaternion(FRotator Current_Rotation)
@@ -101,4 +101,4 @@ void UQuatUtil::AddActorWorldRotationQuat(AActor * Actor, const FQuat & Delta_Ro
 	}
 }
 
-#pragma optimize("", on)
+PRAGMA_ENABLE_OPTIMIZATION
