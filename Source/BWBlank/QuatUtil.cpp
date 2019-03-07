@@ -93,7 +93,7 @@ void UQuatUtil::AddActorLocalRotationQuat(AActor* Actor, const FQuat& Delta_Rota
 	}
 }
 
-void UQuatUtil::AddActorWorldRotationQuat(AActor * Actor, const FQuat & Delta_Rotation)
+void UQuatUtil::AddActorWorldRotationQuat(AActor * Actor, const FQuat& Delta_Rotation)
 {
 	if (Actor)
 	{
